@@ -1,0 +1,23 @@
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col-md-6">
+      <input class="form-control" type="file" #fileInput (change)="onInputChange($event)" accept=".xlsx" />
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-responsive table-stripped table-bordered " *ngIf="filelist">
+      <tr>
+        <!-- This is the first row -->
+        <th style="padding:5px 15px; min-width: fit-content; margin-right: 8px;" *ngFor="let prop of fileKeyValue">{{prop}}</th>
+      </tr>
+      <tr style="padding: 10px; min-width: fit-content;" *ngFor="let item of filelist">
+        <!-- This is the second row -->
+        <td *ngFor="let value of item">{{value}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
